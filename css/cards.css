@@ -1,0 +1,18 @@
+.products, .contact {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto; }
+  .products h2, .contact h2 {
+    text-align: center;
+    color: #3F7D20;
+    width: 100%; }
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #72B01D;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%; }
