@@ -11,35 +11,33 @@ function handleAddCard(event){
 		console.log("count",count);
 
 	
-		var cardBlock = `<div id="${count}">
+		var cardBlock = `
         <section class="card">
-          <h3>Card 1</h3>
-          <p>
-            Chillwave umami williamsburg, ethical meditation fashion axe 8-bit neutra hammock raclette woke. Celiac listicle slow-carb, nisi irure mollit labore keytar pop-up pork belly tofu. Food truck mollit authentic banh mi YOLO kale chips. Air plant seitan cardigan chicharrones typewriter woke.
-          </p>
+          <h3>Card 1</h3><br>
+          <h3>
+            Chillwave umami williamsburg, ethical meditation fashion axe 8-bit neutra hammock raclette woke.
+            Celiac listicle slow-carb, nisi irure mollit labore keytar pop-up pork belly tofu. 
+            Food truck mollit authentic banh mi YOLO kale chips. Air plant seitan cardigan chicharrones typewriter woke.
+          <h3>
           <p><button id="del--${count}">Delete</button></p>
-        </section></div>
+        </section>
         `;
-
+        
 		var addDiv = document.createElement("div");
 		addDiv.innerHTML = cardBlock;
 		addDiv.setAttribute("id",`div--${count}`);
 		document.getElementById("stickItHere").appendChild(addDiv);
+		
+
 
 		var del = document.getElementById(`del--${count}`);
 		del.addEventListener("click", handleDel);
 
 		function handleDel(event){
-			console.log("within handleDel function");
-			var parent = event.target.parentNode;
-			var gparent = parent.parentNode;
-			var ggparent = gparent.parentNode;
+			console.log("within handleDel function", del);
+			console.log("event",event.target.closest("div"));
+			event.target.closest("div").remove();
 			
-			console.log("parent", parent);
-			console.log("gparent", gparent);
-			console.log("ggparent", ggparent);
-			
-			ggparent.removeChild(gparent);
 
 			
 		}
